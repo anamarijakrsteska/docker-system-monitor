@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -27,3 +27,15 @@ jobs:
 
      - name: Run tests
        run: python -m pytest
+
+     - name: Log in to Docker Hub
+       uses: docker/login-action@v3
+       with:
+         username: ${{ secrets.DOCKERHUB_ANAMARIJAKRSTESKA}}
+         password: ${{ secrets.DOCKERHUB_TOKEN}}
+
+     - name: Build Docker image
+     - run: docker build -t anamarijakrsteska/my-python-app:latest .
+
+     - name: Push Docker image
+     - run: docker push anamarijakrsteska/my-python-app:latest
