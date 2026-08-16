@@ -1,3 +1,5 @@
+# CI/CD pipeline
+
 from fastapi import FastAPI
 from app import get_system_info
 import os
