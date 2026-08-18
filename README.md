@@ -16,6 +16,10 @@ A Python-based system monitoring application that collects CPU, memory, and disk
 * Persistent PostgreSQL storage with Docker volumes
 * Database health checks
 * API-to-database communication
+* Automated testing with pytest
+* Jenkins CI/CD pipeline
+* Automated Docker image build
+* Automated Docker Hub image push
 
 ## Technologies
 
@@ -26,6 +30,10 @@ A Python-based system monitoring application that collects CPU, memory, and disk
 * PostgreSQL
 * Docker
 * Docker Compose
+* Jenkins
+* pytest
+* GitHub
+* Docker Hub
 
 ## API Endpoints
 
@@ -88,6 +96,28 @@ docker compose down
 
 PostgreSQL data is stored in a persistent Docker volume, so removing the containers does not remove the database data.
 
+## CI/CD Pipeline
+
+The project uses Jenkins to automate testing, Docker image building, and image publishing.
+
+```text
+GitHub Push
+     ↓
+GitHub Webhook
+     ↓
+Jenkins
+     ↓
+Checkout Code
+     ↓
+Install Dependencies
+     ↓
+Run Tests
+     ↓
+Build Docker Image
+     ↓
+Push Image to Docker Hub
+```
+
 ## Project Structure
 
 ```text
@@ -97,8 +127,11 @@ docker-system-monitor/
 ├── requirements.txt
 ├── Dockerfile
 ├── compose.yaml
+├── Jenkinsfile
 ├── .dockerignore
 ├── .gitignore
+├── tests/
+│   └── test_main.py
 └── README.md
 ```
 
@@ -115,14 +148,16 @@ docker-system-monitor/
 * Persistent volumes
 * Container health checks
 * API-to-database communication
+* Automated testing
+* Jenkins CI/CD pipelines
+* GitHub webhooks
+* Docker Hub image registry
 
 ## Future Development
 
-* Automated testing
-* CI/CD with GitHub Actions
-* Docker image registry
 * Cloud deployment with AWS
 * Infrastructure as Code with Terraform
+* Kubernetes orchestration
 * Monitoring and observability
 * DevSecOps
 * Frontend container
