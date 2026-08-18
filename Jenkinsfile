@@ -10,27 +10,20 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            agent {
-                docker {
-                    image 'python:3.12'
-                }
-            }
-            steps {
-                sh 'pip install -r requirements.txt'
-            }
+        stage('Test') {
+    agent {
+        docker {
+            image 'python:3.12'
+            args '-u root'
         }
-
-        stage('Run Tests') {
-            agent {
-                docker {
-                    image 'python:3.12'
-                }
-            }
-            steps {
-                sh 'python -m pytest'
-            }
-        }
+    }
+    steps {
+        sh '''
+            pip install -r requirements.txt
+            python -m pytest
+        '''
+    }
+}
 
         stage('Build Docker Image') {
             agent any
