@@ -1,9 +1,8 @@
 # System Monitor API
-
 A Python-based system monitoring application that collects CPU, memory, and disk usage, evaluates system health, and exposes the information through a FastAPI REST API. The application is containerized with Docker and uses Docker Compose with PostgreSQL.
 
-## Features
 
+## Features
 * CPU, memory, and disk monitoring
 * Health status classification: `OK`, `WARNING`, `CRITICAL`
 * Overall system health status
@@ -21,8 +20,8 @@ A Python-based system monitoring application that collects CPU, memory, and disk
 * Automated Docker image build
 * Automated Docker Hub image push
 
-## Technologies
 
+## Technologies
 * Python
 * FastAPI
 * Uvicorn
@@ -35,8 +34,8 @@ A Python-based system monitoring application that collects CPU, memory, and disk
 * GitHub
 * Docker Hub
 
-## API Endpoints
 
+## API Endpoints
 | Endpoint       | Description                            |
 | -------------- | -------------------------------------- |
 | `GET /`        | API status                             |
@@ -46,8 +45,8 @@ A Python-based system monitoring application that collects CPU, memory, and disk
 | `GET /db-test` | Tests the API-to-PostgreSQL connection |
 | `GET /docs`    | Interactive API documentation          |
 
-## Run Locally
 
+## Run Locally
 Install dependencies:
 
 ```bash
@@ -66,8 +65,8 @@ Open:
 http://127.0.0.1:8000/docs
 ```
 
-## Run with Docker Compose
 
+## Run with Docker Compose
 Build and start the containers:
 
 ```bash
@@ -96,8 +95,8 @@ docker compose down
 
 PostgreSQL data is stored in a persistent Docker volume, so removing the containers does not remove the database data.
 
-## CI/CD Pipeline
 
+## CI/CD Pipeline
 The project uses GitHub Actions and Jenkins to automate testing, Docker image building, and image publishing.
 
 ```text
@@ -120,8 +119,8 @@ Build Docker Image
 Push Image to Docker Hub
 ```
 
-## Project Structure
 
+## Project Structure
 ```text
 docker-system-monitor/
 ├── app.py
@@ -137,8 +136,8 @@ docker-system-monitor/
 └── README.md
 ```
 
-## DevOps Concepts Demonstrated
 
+## DevOps Concepts Demonstrated
 * Docker image creation
 * Docker containers
 * Port mapping
@@ -155,11 +154,21 @@ docker-system-monitor/
 * GitHub webhooks
 * Docker Hub image registry
 
-## Future Development
 
+## Future Development
 * Cloud deployment with AWS
 * Infrastructure as Code with Terraform
+* Configuration management with Ansible
 * Kubernetes orchestration
 * Monitoring and observability
 * DevSecOps
 * Frontend container
+
+
+
+
+
+
+
+
+
