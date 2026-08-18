@@ -98,9 +98,11 @@ PostgreSQL data is stored in a persistent Docker volume, so removing the contain
 
 ## CI/CD Pipeline
 
-The project uses Jenkins to automate testing, Docker image building, and image publishing.
+The project uses GitHub Actions and Jenkins to automate testing, Docker image building, and image publishing.
 
 ```text
+Jenkins
+
 GitHub Push
      ↓
 GitHub Webhook
